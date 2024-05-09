@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  * {
+    @apply transition-all duration-200 ease-in-out outline-none;
+  }
+
+  select:has(option[value="none"]:checked) {
+    @apply text-gray-300 dark:text-slate-700
+  }
+
+  input[type="date"]:has(:not([value])) {
+    @apply text-gray-300 dark:text-slate-700
+  }
+
+  input, textarea, select, .coverLabel {
+    @apply px-4 h-12 w-full rounded-md border-2 appearance-none border-gray-300 dark:border-slate-700 dark:bg-[#0c0f1a] dark:text-white placeholder:text-gray-300 dark:placeholder:text-slate-700
+  }
+
+  .coverLabel {
+    @apply text-gray-300 dark:text-slate-700
+  }
+
+  .categorySelect, .coverLabel {
+    background-size: 1rem 1rem;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1rem);
+  }
+
+  #showPass {
+    @apply absolute h-4 w-4 right-2.5 cursor-pointer bg-transparent top-3.5 z-30 bg-[url('/eyeLight.svg')] dark:bg-[url('/eyeDark.svg')] bg-contain bg-center bg-no-repeat border-none
+  }
+
+  .categorySelect {
+    @apply bg-[url('/arrowLight.svg')] dark:bg-[url('/arrowDark.svg')]
+  }
+
+  .coverLabel {
+    @apply bg-[url('/fileLight.svg')] dark:bg-[url('/fileDark.svg')]
+  }
+}
